@@ -1,5 +1,7 @@
 # SOLID
 
-Clone and install with "composer update"
+Clone repo.
 
-Run "php -S localhost:8888" within /public
+Install with >composer update
+
+Set the server up within /public >php -S localhost:8888
