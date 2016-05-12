@@ -37,7 +37,7 @@ class InitialMigration extends AbstractMigration
 		    ->addColumn('created', 'datetime')
 		    ->addColumn('updated', 'datetime', array('null' => true))
 		    ->addIndex(array('username', 'email'), array('unique' => true))
-		    ->save();
+		    ->create();
     }
 
 }

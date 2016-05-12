@@ -1,6 +1,8 @@
 <?php
+require __DIR__ . '/../config/config.php';
 
 $Injector = new \Auryn\Injector;
+
 
 /**
  * HTTP objects are shared because there would not be much point in adding content to
@@ -28,9 +30,9 @@ $Injector->alias('Authorization', 'App\Middleware\Auth\JsonWebToken');
 $Injector->alias('Database', 'Aura\Sql\ExtendedPdo');
 $Injector->share('Aura\Sql\ExtendedPdo');
 $Injector->define('Aura\Sql\ExtendedPdo', [
-	'mysql:host=127.0.0.1;dbname=test',
-	'root',
-	'LX8]ffaj6FBF;8rZJK{Bg'
+	"mysql:host=".DB_HOST.";dbname=".DB_NAME,
+	DB_USER,
+	DB_PASS
 ]);
 
 

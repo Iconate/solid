@@ -13,13 +13,15 @@ error_reporting(E_ALL);
  * Register the error handler
  */
 $ErrorHandler = new \Whoops\Run;
-if ( $_SERVER['APP_ENV'] !== 'prod' ) {
-	$ErrorHandler->pushHandler(new \Whoops\Handler\PrettyPageHandler);
-} else {
-	$ErrorHandler->pushHandler(function ($e) {
-		echo 'Friendly error page and send an email to the developer';
-	});
-}
+$ErrorHandler->pushHandler(new \Whoops\Handler\PrettyPageHandler);
+//
+//if ( $_SERVER['APP_ENV'] !== 'prod' ) {
+//	$ErrorHandler->pushHandler(new \Whoops\Handler\PrettyPageHandler);
+//} else {
+//	$ErrorHandler->pushHandler(function ($e) {
+//		echo 'Friendly error page and send an email to the developer';
+//	});
+//}
 
 $ErrorHandler->register();
 
