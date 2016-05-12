@@ -1,33 +1,27 @@
 <?php
 namespace App\Handlers;
 
-use Http\Request;
+use App\Services\UserService;
+use Aura\Sql\ExtendedPdo as Database;
 use Http\Response;
-use App\Template\FrontendRenderer;
 
 class HomeController
 {
-    private $request;
-    private $response;
-    private $renderer;
+    private $Response;
+	private $UserService;
 
     public function __construct(
-        Request $request,
         Response $response,
-        FrontendRenderer $renderer
+		UserService $userService
     )
     {
-        $this->request = $request;
-        $this->response = $response;
-        $this->renderer = $renderer;
+        $this->Response = $response;
+	    $this->UserService = $userService;
     }
 
     public function index()
     {
-        $data = [
-            'name' => $this->request->getParameter('name', 'stranger'),
-        ];
-        $html = $this->renderer->render('homepage', $data);
-        $this->response->setContent($html);
+	    $results = $this->UserService->login();
+	    $this->Response->setContent(json_encode($results));
     }
 }
