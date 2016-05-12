@@ -1,17 +1,17 @@
 <?php namespace App\Handlers;
 
-
-
-
-class AuthController {
+class AuthController
+{
 
 	public function __construct()
 	{
-
 	}
 
 	public function login()
 	{
+	}
 
+	public function logout()
+	{
 	}
 }

@@ -12,7 +12,7 @@ class JsonWebToken implements AuthorizationInterface{
 		$this->Response = $response;
 	}
 
-	public function authorization()
+	public function authorize()
 	{
 		// do jwt check
 		// ...

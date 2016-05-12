@@ -3,6 +3,6 @@
 interface AuthorizationInterface
 {
 
-	public function authorization();
+	public function authorize();
 
 }
