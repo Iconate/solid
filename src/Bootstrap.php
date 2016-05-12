@@ -33,15 +33,12 @@ $ErrorHandler->register();
 
 /**
  * ========================================================================
- *          Initialize Route Collector, Resolver and Dispatcher
+ *          Initialize Route Collector and Resolver
  * ========================================================================
  */
-
-$RouteCollector = new \Phroute\RouteCollector();
 $Injector = include( 'Dependencies.php' );
 $RouteResolver = new RouteResolver($Injector);
-
-$Dispatcher = new \Phroute\Dispatcher($RouteCollector, $RouteResolver);
+$RouteCollector = new \Phroute\RouteCollector();
 
 /**
  * ====================================
@@ -79,10 +76,11 @@ foreach ( $routes as $route ) {
 }
 
 /**
- * ====================================
- *           Dispatch Request
- * ====================================
+ * =========================================================
+ *           Prepare Dispatcher and Dispatch Request
+ * =========================================================
  */
+$Dispatcher = new \Phroute\Dispatcher($RouteCollector, $RouteResolver);
 $Response = $Injector->make('Http\Response');
 try {
 	// Route found
