@@ -1,0 +1,19 @@
+{
+  "name": "solid",
+  "version": "0.0.1",
+  "homepage": "https://github.com/Iconate/solid",
+  "authors": [
+    "Nathan Krueger <nathan@nathankrueger.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "riot": "~2.4.1"
+  }
+}

@@ -14,6 +14,6 @@ class UserService
 
 	public function login()
 	{
-		return $this->UserRepo->findAll();
+		//return $this->UserRepo->findAll();
 	}
 }

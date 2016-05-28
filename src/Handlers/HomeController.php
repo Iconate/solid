@@ -21,7 +21,7 @@ class HomeController
 
     public function index()
     {
-	    $results = $this->UserService->login();
-	    $this->Response->setContent(json_encode($results));
+//	    $results = $this->UserService->login();
+	    $this->Response->setContent("Hello World");
     }
 }

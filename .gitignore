@@ -3,3 +3,4 @@ composer.lock
 vendor/
 config/*config.php
 phinx.yml
+bower_components/

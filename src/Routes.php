@@ -13,5 +13,6 @@
  * ]
  */
 return [
+	['GET','/', 'App\Handlers\HomeController', 'index'],
 	['GET','/example/{id}', 'App\Handlers\HomeController', 'index', ['before' => 'auth']],
 ];
